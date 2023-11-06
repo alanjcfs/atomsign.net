@@ -2,5 +2,6 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["@nuxt/ui", "@nuxt/content"],
-  content: {}
+  content: {},
+  target: "static",
 })
