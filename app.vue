@@ -3,17 +3,21 @@
     <UCard class="mt-10">
       <template #header>
         <div class="flex justify-between">
-          <div><a class="text-4xl font-bold" href="/">Atom.</a></div>
+          <nuxt-link
+            class="text-4xl font-bold"
+            to="/"
+          >Atom.</nuxt-link>
 
-          <div><a class="text-4xl font-bold no-underline" href="https://github.com/alanjcfs">Code.</a></div>
+          <a
+            class="text-4xl font-bold no-underline"
+            to="//github.com/alanjcfs"
+          >Code.</a>
 
-          <div>
-            <a
-              class="text-4xl font-bold no-underline"
-              href="/american-sign-language">
-              Sign.
-            </a>
-          </div>
+          <nuxt-link
+            class="text-4xl font-bold no-underline"
+            to="/american-sign-language">
+            Sign.
+          </nuxt-link>
           <ColorScheme>
             <USelect
               v-model="$colorMode.preference"
