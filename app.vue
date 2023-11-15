@@ -10,7 +10,7 @@
 
           <a
             class="text-4xl font-bold no-underline"
-            to="//github.com/alanjcfs"
+            href="//github.com/alanjcfs"
           >Code.</a>
 
           <nuxt-link
