@@ -1,3 +1,14 @@
+---
+title: RESTful APIs
+head:
+  meta:
+    - name: 'keywords'
+      content: 'api, json, RESTful'
+    - name: 'author'
+      content: 'Alan Fung-Schwarz'
+    - name: 'copyright'
+      content: '© 2023 Alan Fung-Schwarz'
+---
 # RESTful
 
 I was reading [Phoenix/Routing](https://hexdocs.pm/phoenix/routing.html) documentation when I came across this
