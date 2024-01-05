@@ -1,22 +1,10 @@
-<script>
+<script setup>
 import MultiplicationTable from '@/components/MultiplicationTable.vue'
 
-export default {
-  components: {
-    MultiplicationTable
-  },
-  data: () => {
-    const data = {
-      showMultiplicationTable: false,
-    }
+const showMultiplicationTable = ref(false);
 
-    return data
-  },
-  methods: {
-    toggleMultiplicationTable() {
-      this.showMultiplicationTable = !this.showMultiplicationTable
-    },
-  },
+function toggleMultiplicationTable() {
+  showMultiplicationTable.value = !showMultiplicationTable.value
 }
 </script>
 
@@ -56,12 +44,17 @@ export default {
         </div>
       </template>
 
-      <div
-        @click="toggleMultiplicationTable"
-      >Multiplication Table</div>
-      <MultiplicationTable
-        v-show="showMultiplicationTable"
-      />
+      <div class="flex justify-between">
+        <div
+          @click="toggleMultiplicationTable"
+          class="p-2 border rounded-sm cursor-pointer select-none"
+        >Multiplication Table</div>
+      </div>
+      <Transition>
+        <MultiplicationTable
+          v-if="showMultiplicationTable"
+        />
+      </Transition>
 
     </UCard>
 
@@ -70,3 +63,15 @@ export default {
     </UCard>
   </UContainer>
 </template>
+
+<style scoped>
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+</style>
