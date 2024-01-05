@@ -1,6 +1,28 @@
+<script>
+import MultiplicationTable from '@/components/MultiplicationTable.vue'
+
+export default {
+  components: {
+    MultiplicationTable
+  },
+  data: () => {
+    const data = {
+      showMultiplicationTable: false,
+    }
+
+    return data
+  },
+  methods: {
+    toggleMultiplicationTable() {
+      this.showMultiplicationTable = !this.showMultiplicationTable
+    },
+  },
+}
+</script>
+
 <template>
   <UContainer>
-    <UCard class="mt-10">
+    <UCard class="mt-4">
       <template #header>
         <div class="flex justify-between">
           <NuxtLink
@@ -23,17 +45,27 @@
             to="/american-sign-language">
             Sign.
           </NuxtLink>
+
           <ColorScheme>
             <USelect
               v-model="$colorMode.preference"
               :options="['system', 'light', 'dark']"
             />
           </ColorScheme>
+
         </div>
       </template>
+
+      <div
+        @click="toggleMultiplicationTable"
+      >Multiplication Table</div>
+      <MultiplicationTable
+        v-show="showMultiplicationTable"
+      />
+
     </UCard>
 
-    <UCard class="mt-10">
+    <UCard class="mt-4">
       <NuxtPage class="prose prose-zinc dark:prose-invert" />
     </UCard>
   </UContainer>
