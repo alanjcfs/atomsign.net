@@ -1,6 +1,4 @@
 <script setup>
-import MultiplicationTable from '@/components/MultiplicationTable.vue'
-
 const showMultiplicationTable = ref(false);
 
 function toggleMultiplicationTable() {
